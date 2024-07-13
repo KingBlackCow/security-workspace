@@ -26,7 +26,8 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated()).httpBasic(basic -> basic.authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
+        http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .httpBasic(basic -> basic.authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
 
         return http.build();
     }
